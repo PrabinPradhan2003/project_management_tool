@@ -133,7 +133,7 @@ Open your browser:
 mongod
 
 # Or use MongoDB Atlas connection string in .env
-MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/dbname
+MONGO_URI=mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>.mongodb.net/<DBNAME>
 ```
 
 ### ❌ "GROQ API Key invalid"
