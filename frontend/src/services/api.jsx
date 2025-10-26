@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 // Vite exposes env vars via import.meta.env and they must be prefixed with VITE_
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+// Default to Render backend for production
+const API_URL = import.meta.env.VITE_API_URL || 'https://project-management-tool-95uz.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_URL,
