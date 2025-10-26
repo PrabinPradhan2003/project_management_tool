@@ -204,12 +204,6 @@ Backend: express ^4.18.2, mongoose ^7.3.4, jsonwebtoken ^9.0.0, bcrypt ^5.1.0, c
 
 Frontend: react ^18, react-router-dom ^6, @mui/material ^5, @mui/icons-material ^5, @emotion/* ^11, axios ^1, dayjs ^1, vite ^5
 
-## 📚 Additional Docs
-- QUICKSTART.md — quick steps
-- GROQ_SETUP.md — Groq key setup and troubleshooting
-- FEATURE_SHOWCASE.md — UI highlights
-- ER_DIAGRAM.md — data model diagram
-- SUBMISSION_CHECKLIST.md, SUBMISSION_SUMMARY.md — evaluation aids
 
 ## 📝 License
 This project is for intern assignment evaluation purposes.
