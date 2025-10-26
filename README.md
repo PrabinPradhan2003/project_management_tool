@@ -5,9 +5,9 @@ Full-Stack MERN app with Material‑UI and AI-powered user story generation.
 A comprehensive Project Management Tool built with the MERN stack (MongoDB, Express, React, Node) featuring role-based access control, task tracking, team management, and AI-powered user story generation using Groq. The UI is fully built with Material‑UI, includes an animated landing page, a fixed navbar with avatar menu, reusable confirm dialogs for deletes, an animated SVG logo, and text‑to‑speech on AI stories. The backend includes centralized error handling and robust Groq model selection.
 
 ## 👨‍💻 Developer
-- Full Name: [Your Name]
-- Contact: [you@example.com]
-- Submission Date: [YYYY-MM-DD]
+- Full Name: Mula Prabin Pradhan
+- Contact: prabinpradhan1008@gmail.com
+- Submission Date: 27/10/2025
 
 ## 🚀 Features
 
