@@ -1,0 +1,413 @@
+{
+  "info": {
+    "name": "Project Management Tool API",
+    "description": "Complete API collection for Project Management Tool with AI User Story Generator",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwt_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\",\n  \"role\": \"Manager\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "Get All Projects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/projects",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects"]
+            }
+          }
+        },
+        {
+          "name": "Create Project",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"E-commerce Website\",\n  \"description\": \"Build a modern e-commerce platform\",\n  \"status\": \"Planning\",\n  \"startDate\": \"2025-01-01\",\n  \"endDate\": \"2025-06-30\",\n  \"memberAssignments\": [\n    {\n      \"userId\": \"user_id_here\",\n      \"role\": \"Developer\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/projects",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects"]
+            }
+          }
+        },
+        {
+          "name": "Get Project Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/projects/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Project",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Project Name\",\n  \"status\": \"In Progress\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/projects/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Project",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/projects/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Project Members",
+      "item": [
+        {
+          "name": "Get Project Members",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/projects/:id/members",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ":id", "members"]
+            }
+          }
+        },
+        {
+          "name": "Add Member to Project",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"user_id_here\",\n  \"role\": \"Developer\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/projects/:id/members",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ":id", "members"]
+            }
+          }
+        },
+        {
+          "name": "Update Member Role",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"role\": \"Manager\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/projects/:id/members/:userId",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ":id", "members", ":userId"]
+            }
+          }
+        },
+        {
+          "name": "Remove Member from Project",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/projects/:id/members/:userId",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ":id", "members", ":userId"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "item": [
+        {
+          "name": "Get All Tasks",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/tasks",
+              "host": ["{{base_url}}"],
+              "path": ["api", "tasks"]
+            }
+          }
+        },
+        {
+          "name": "Create Task",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Design Homepage\",\n  \"description\": \"Create responsive homepage design\",\n  \"status\": \"To Do\",\n  \"deadline\": \"2025-02-15\",\n  \"projectId\": \"project_id_here\",\n  \"assignedTo\": \"user_id_here\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/tasks",
+              "host": ["{{base_url}}"],
+              "path": ["api", "tasks"]
+            }
+          }
+        },
+        {
+          "name": "Update Task",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"In Progress\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/tasks/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "tasks", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Task",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/tasks/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "tasks", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AI User Stories (BONUS)",
+      "item": [
+        {
+          "name": "Generate User Stories",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"projectDescription\": \"An ecommerce website where customers can browse products, add to cart, and make payments online. Admin should manage products and view orders.\",\n  \"projectId\": \"optional_project_id_here\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/ai/generate-user-stories",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "generate-user-stories"]
+            },
+            "description": "Generate AI-powered user stories using GROQ"
+          }
+        },
+        {
+          "name": "Get Project User Stories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/ai/user-stories/:projectId",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "user-stories", ":projectId"]
+            }
+          }
+        },
+        {
+          "name": "Convert Story to Task",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"assignedTo\": \"user_id_here\",\n  \"deadline\": \"2025-03-01\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/ai/user-stories/:storyId/convert-to-task",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "user-stories", ":storyId", "convert-to-task"]
+            }
+          }
+        },
+        {
+          "name": "Update Story Status",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"rejected\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/ai/user-stories/:storyId/status",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "user-stories", ":storyId", "status"]
+            }
+          }
+        },
+        {
+          "name": "Delete User Story",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/ai/user-stories/:storyId",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "user-stories", ":storyId"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:4000",
+      "type": "string"
+    },
+    {
+      "key": "jwt_token",
+      "value": "your_jwt_token_here",
+      "type": "string"
+    }
+  ]
+}
